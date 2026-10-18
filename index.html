@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#0a0406">
+<meta name="description" content="S2S Mafia — KUAF talabalari uchun premium Mafia o'yini">
+<title>S2S Mafia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="gothic" data-phase="night" data-screen="intro">
+
+<!-- ====== IKONKALAR ====== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="i-speaker" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l5 6M22 9l-5 6"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="i-exit" viewBox="0 0 24 24"><path d="M9 4H5v16h4M16 8l4 4-4 4M20 12H9"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.3c2.2.6 3.5 2.6 3.5 5.7"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/></symbol>
+  <symbol id="i-cards" viewBox="0 0 24 24"><rect x="4" y="5" width="11" height="15" rx="2"/><path d="M9 3h9a2 2 0 0 1 2 2v12"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8-8-2z"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 24 24"><path d="M3 16h18M6 16c0-3 1-7 2-9h8c1 2 2 6 2 9M8 11h8"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3z"/></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 18l2-10 5 5 2-8 2 8 5-5 2 10H3z"/></symbol>
+  <symbol id="i-skull" viewBox="0 0 24 24"><path d="M12 3a8 8 0 0 0-8 8c0 2.5 1.2 4.4 3 5.6V20h10v-3.4c1.8-1.2 3-3.1 3-5.6a8 8 0 0 0-8-8z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+</svg>
+
+<!-- ====== 1. QONLI KIRISH (INTRO) ====== -->
+<section id="screen-intro" class="screen">
+  <div class="intro-bg"></div>
+  <div class="intro-moon"></div>
+  <div class="intro-figure"></div>
+  <div id="dripRow" class="drip-row" aria-hidden="true"></div>
+  <div class="intro-content">
+    <p class="eyebrow">KUAF talabalari uchun</p>
+    <h1 class="logo">S2S <span>MAFIA</span></h1>
+    <p class="tagline">Shahar uxlaydi. Mafia uyg'onadi.</p>
+    <button id="btnEnter" class="btn-primary btn-big" type="button">
+      <svg class="ic"><use href="#i-skull"/></svg><span>Kirish</span>
+    </button>
+    <p class="hint">Ovoz va effektlar uchun ekranga teging</p>
+  </div>
+</section>
+
+<!-- ====== 2. LOBBI ====== -->
+<section id="screen-lobby" class="screen hidden">
+  <div class="lobby-card glass">
+    <h2 class="display">Xonaga kirish</h2>
+
+    <label class="field">
+      <span>Ismingiz</span>
+      <input id="inpName" type="text" maxlength="14" placeholder="Masalan: Sardor" autocomplete="off">
+    </label>
+
+    <button id="btnCreate" class="btn-primary" type="button">
+      <svg class="ic"><use href="#i-plus"/></svg><span>Yangi xona yaratish</span>
+    </button>
+
+    <div class="divider"><span>yoki</span></div>
+
+    <div class="join-row">
+      <input id="inpCode" type="text" inputmode="numeric" maxlength="4" placeholder="Xona kodi (4 raqam)" autocomplete="off">
+      <button id="btnJoin" class="btn-ghost" type="button">Kirish</button>
+    </div>
+
+    <p id="lobbyMsg" class="lobby-msg" role="status"></p>
+
+    <div class="lobby-themes">
+      <span class="small-label">Mavzu</span>
+      <div id="lobbyThemes" class="theme-chips"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 3. O'YIN XONASI ====== -->
+<section id="screen-room" class="screen hidden">
+
+  <!-- Sahna qatlamlari: orqa fon, oy, tuman, yorug'lik -->
+  <div id="scene" aria-hidden="true">
+    <div class="layer bg"></div>
+    <div class="layer far"></div>
+    <div class="layer moon"></div>
+    <div class="layer figure"></div>
+    <div class="layer fog"></div>
+    <div class="layer lights"></div>
+    <canvas id="fx"></canvas>
+    <div class="layer vignette"></div>
+    <div class="layer flash"></div>
+  </div>
+
+  <!-- Yuqori chap: xona ma'lumoti -->
+  <div id="roomInfo" class="room-info glass">
+    <div class="room-line">
+      <span class="room-title">Xona <b id="roomId">----</b></span>
+      <button id="btnCopy" class="icon-btn mini" type="button" aria-label="Kodni nusxalash">
+        <svg class="ic"><use href="#i-copy"/></svg>
+      </button>
+    </div>
+    <div class="room-sub">
+      <span><svg class="ic"><use href="#i-users"/></svg> <b id="playerCount">0/12</b></span>
+    </div>
+  </div>
+
+  <!-- Markaz: kun/tun HUD -->
+  <div id="hud" class="hud">
+    <div class="hud-frame">
+      <div class="hud-top">
+        <svg class="ic hud-icon"><use id="phaseUse" href="#i-moon"/></svg>
+        <span id="phaseLabel" class="hud-phase">Kutilmoqda</span>
+      </div>
+      <div class="hud-timer"><span id="timer">--:--</span></div>
+    </div>
+    <div class="hud-blood" aria-hidden="true"></div>
+  </div>
+
+  <!-- Yuqori o'ng: boshqaruv -->
+  <div id="topControls" class="top-controls">
+    <button id="btnSound" class="icon-btn glass" type="button" aria-label="Ovoz"><svg class="ic"><use id="soundUse" href="#i-speaker"/></svg></button>
+    <button id="btnMic" class="icon-btn glass" type="button" aria-label="Mikrofon"><svg class="ic"><use href="#i-mic"/></svg></button>
+    <button id="btnSettings" class="icon-btn glass" type="button" aria-label="Sozlamalar"><svg class="ic"><use href="#i-gear"/></svg></button>
+    <button id="btnExit" class="icon-btn glass" type="button" aria-label="Chiqish"><svg class="ic"><use href="#i-exit"/></svg></button>
+  </div>
+
+  <!-- Stol va o'yinchilar -->
+  <div id="stage">
+    <div id="tableWrap">
+      <div id="table">
+        <div class="table-rune"></div>
+        <div id="tableCenter" class="table-center">
+          <span id="tableText">Mafia</span>
+        </div>
+      </div>
+    </div>
+    <div id="seats"></div>
+  </div>
+
+  <!-- O'ng dock: tablar -->
+  <nav id="sideDock" class="side-dock glass" aria-label="Bo'limlar">
+    <button class="dock-btn" data-tab="players" type="button"><svg class="ic"><use href="#i-users"/></svg><span>O'yinchilar</span></button>
+    <button class="dock-btn" data-tab="chat" type="button"><svg class="ic"><use href="#i-chat"/></svg><span>Chat</span><i id="chatBadge" class="badge hidden">0</i></button>
+    <button class="dock-btn" data-tab="cards" type="button"><svg class="ic"><use href="#i-cards"/></svg><span>Kartalar</span></button>
+    <button class="dock-btn" data-tab="settings" type="button"><svg class="ic"><use href="#i-gear"/></svg><span>Sozlama</span></button>
+  </nav>
+
+  <!-- Pastki chap: chat paneli -->
+  <div id="chatPanel" class="chat-panel glass">
+    <div id="chatLog" class="chat-log" aria-live="polite"></div>
+    <form id="chatForm" class="chat-form" autocomplete="off">
+      <input id="chatInput" type="text" maxlength="140" placeholder="Xabar yozing...">
+      <button type="submit" class="send-btn" aria-label="Yuborish"><svg class="ic"><use href="#i-send"/></svg></button>
+    </form>
+  </div>
+
+  <!-- Pastki markaz: rol / harakat tugmalari -->
+  <div id="roleBar" class="role-bar glass">
+    <button class="role-btn" data-role="mafia" type="button"><svg class="ic"><use href="#i-hat"/></svg><span>Mafia</span></button>
+    <button class="role-btn" data-role="doctor" type="button"><svg class="ic"><use href="#i-plus"/></svg><span>Doktor</span></button>
+    <button class="role-btn" data-role="sheriff" type="button"><svg class="ic"><use href="#i-star"/></svg><span>Sherif</span></button>
+    <button class="role-btn" data-role="citizen" type="button"><svg class="ic"><use href="#i-users"/></svg><span>Fuqaro</span></button>
+  </div>
+
+  <!-- Host uchun: o'yinni boshlash -->
+  <button id="btnStart" class="btn-primary start-btn hidden" type="button">
+    <svg class="ic"><use href="#i-skull"/></svg><span>O'yinni boshlash</span>
+  </button>
+
+  <!-- Yon panel (O'yinchilar / Kartalar / Sozlama) -->
+  <aside id="sheet" class="sheet glass hidden" aria-label="Panel">
+    <header class="sheet-head">
+      <h3 id="sheetTitle" class="display">Panel</h3>
+      <button id="sheetClose" class="icon-btn mini" type="button" aria-label="Yopish"><svg class="ic"><use href="#i-close"/></svg></button>
+    </header>
+
+    <div id="pane-players" class="pane hidden">
+      <ul id="playerList" class="player-list"></ul>
+    </div>
+
+    <div id="pane-cards" class="pane hidden">
+      <p class="muted">Rollar va ularning vazifalari:</p>
+      <div id="cardList" class="card-list"></div>
+    </div>
+
+    <div id="pane-settings" class="pane hidden">
+      <p class="small-label">Mavzu</p>
+      <div id="themeGrid" class="theme-grid"></div>
+
+      <label class="range-row">
+        <span>Ovoz balandligi</span>
+        <input id="volRange" type="range" min="0" max="100" value="60">
+      </label>
+
+      <label class="switch-row">
+        <span>Fon ovozlari (shamol, qadamlar)</span>
+        <input id="chkAmbient" type="checkbox" checked>
+      </label>
+
+      <label class="switch-row">
+        <span>Effektlar (qon, chaqmoq)</span>
+        <input id="chkFx" type="checkbox" checked>
+      </label>
+    </div>
+  </aside>
+
+  <!-- Rol ochilishi / o'yin yakuni -->
+  <div id="overlay" class="overlay hidden" role="dialog" aria-modal="true">
+    <div class="overlay-card glass">
+      <div id="overlayIcon" class="overlay-icon"></div>
+      <h2 id="overlayTitle" class="display">Sarlavha</h2>
+      <p id="overlayText">Matn</p>
+      <button id="overlayBtn" class="btn-primary" type="button">Davom etish</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden" role="status"></div>
+</section>
+
+<noscript><p style="color:#fff;padding:24px">Bu o'yin ishlashi uchun JavaScript yoqilgan bo'lishi kerak.</p></noscript>
+
+<!-- Firebase (compat) — tashqi CDN -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+<!-- O'yin fayllari (tartib muhim) -->
+<script src="audio.js"></script>
+<script src="net.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
